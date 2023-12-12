@@ -1,0 +1,12 @@
+x = int(input("Введите число: "))
+
+is_prime = True
+for i in range(2, x):
+    if x % i == 0:
+        is_prime = False
+        break
+
+if is_prime:
+    print(x, "является простым числом")
+else:
+    print(x, "не является простым числом")
