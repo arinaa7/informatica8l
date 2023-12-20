@@ -1,0 +1,12 @@
+def convert_to_decimal(number):
+    decimal_number = 0
+    power = 0
+    while number > 0:
+        decimal_number += (number % 10) * (24 ** power)
+        number //= 10
+        power += 1
+    return decimal_number
+
+number_in_24 = int(input("Введите число в 24-ой системе счисления: "))
+decimal_number = convert_to_decimal(number_in_24)
+print("Число в десятичной системе счисления:", decimal_number)
