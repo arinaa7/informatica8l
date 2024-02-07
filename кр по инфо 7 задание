@@ -1,0 +1,24 @@
+def get_digit_sum(num):
+    # Функция для подсчета суммы цифр числа
+    digit_sum = 0
+    while num > 0:
+        digit_sum += num % 10
+        num //= 10
+    return digit_sum
+
+def find_numbers_with_max_digit_sum(sequence):
+    max_sum = -1
+    max_numbers = []
+    for num in sequence:
+        current_sum = get_digit_sum(num)
+        if current_sum > max_sum:
+            max_sum = current_sum
+            max_numbers = [num]
+        elif current_sum == max_sum:
+            max_numbers.append(num)
+    return max_numbers
+
+# Пример использования функции
+sequence = [123, 456, 789, 99, 1234, 56789, 999]
+max_numbers = find_numbers_with_max_digit_sum(sequence)
+print("Числа с максимальной суммой цифр:", max_numbers)
