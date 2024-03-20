@@ -1,0 +1,16 @@
+def average(*args):
+    if len(args) == 0:
+        return 0
+    sum = 0
+    num = 0
+    for arg in args:
+        if isinstance(arg, (int, float)):
+            sum += arg
+            num += 1
+    if num == 0:
+        return 0
+    return sum / num
+
+print(average(1, 2, 3, 4, 5))  
+print(average(10, 15, 20))      
+print(average(2, 4, 'a', 6))    
