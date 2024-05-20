@@ -1,0 +1,20 @@
+# 1) Вычислить результат выражения 4^3 * 3^19
+result = 4 ** 3 * 3 ** 19
+
+# 2) Перевести результат в троичную систему счисления
+troichnoe_chislo = ""
+osnov = 3
+while result > 0:
+    ostatok = result % osnov
+    troichnoe_chislo = str(ostatok) + troichnoe_chislo
+    result //= osnov
+
+# 3) Подсчитать количество нулей в троичной записи результата
+kolvo_null = 0
+for tsifra in troichnoe_chislo:
+    if tsifra == '0':
+        kolvo_null += 1
+
+# Вывести результат и количество нулей
+print(f"Троичная запись результата: {troichnoe_chislo}")
+print(f"Количество нулей: {kolvo_null}")
